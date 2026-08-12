@@ -18,5 +18,3 @@
     <img src="https://www.gitskins.com/api/section/heatmap?username=diischm&theme=github-dark&style=terminal&mode=dark" width="100%" alt="diischm heatmap" />
   </picture>
 </div>
-
-<p align="center"><sub>Dimitar Karadjovski</sub></p>
