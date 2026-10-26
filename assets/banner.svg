@@ -1,0 +1,217 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="220" viewBox="0 0 800 220" font-family="'JetBrains Mono','Ubuntu Mono','DejaVu Sans Mono',Menlo,Consolas,monospace">
+  <defs>
+    <!-- ===== Palette: graphite + Ubuntu orange ===== -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#26272b"/>
+      <stop offset="0.55" stop-color="#1b1c1f"/>
+      <stop offset="1" stop-color="#121315"/>
+    </linearGradient>
+    <radialGradient id="orbA">
+      <stop offset="0" stop-color="#E95420" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#E95420" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbB">
+      <stop offset="0" stop-color="#F29111" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#F29111" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.6" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.55"/>
+    </radialGradient>
+    <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="0.8" fill="#ffffff" fill-opacity="0.05"/>
+    </pattern>
+    <pattern id="scan" width="4" height="3" patternUnits="userSpaceOnUse">
+      <rect width="4" height="1" fill="#000" fill-opacity="0.22"/>
+    </pattern>
+    <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E95420" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#E95420" stop-opacity="0.07"/>
+      <stop offset="1" stop-color="#E95420" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Name fill + moving shine -->
+    <linearGradient id="nameFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFB27A"/>
+      <stop offset="0.45" stop-color="#F26B2A"/>
+      <stop offset="1" stop-color="#C2410C"/>
+    </linearGradient>
+    <linearGradient id="shine" gradientUnits="userSpaceOnUse" x1="0" y1="60" x2="140" y2="110" gradientTransform="translate(-400 0)">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="0.45" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#fff" stop-opacity="0.85"/>
+      <stop offset="0.55" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+      <animateTransform attributeName="gradientTransform" type="translate" from="-400 0" to="1000 0" dur="4s" begin="5.2s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#E95420" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#E95420"/>
+      <stop offset="1" stop-color="#E95420" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Progress bar blocks -->
+    <pattern id="blocks" width="16" height="12" patternUnits="userSpaceOnUse" x="24" y="166">
+      <rect width="13" height="12" rx="1.5" fill="#E95420"/>
+    </pattern>
+    <pattern id="blocksBg" width="16" height="12" patternUnits="userSpaceOnUse" x="24" y="166">
+      <rect width="13" height="12" rx="1.5" fill="#2e3035"/>
+    </pattern>
+
+    <!-- Filters -->
+    <filter id="glow" x="-20%" y="-60%" width="140%" height="220%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+    <filter id="reveal" x="-20%" y="-60%" width="140%" height="220%">
+      <feGaussianBlur stdDeviation="10">
+        <animate attributeName="stdDeviation" values="10;0.01" begin="3.9s" dur="0.7s" fill="freeze"/>
+      </feGaussianBlur>
+    </filter>
+
+    <!-- Clips -->
+    <clipPath id="frame"><rect width="800" height="220" rx="12"/></clipPath>
+    <clipPath id="cmdClip">
+      <rect x="20" y="44" height="26" width="0">
+        <animate attributeName="width" values="0;344" begin="0.4s" dur="1.1s" fill="freeze"/>
+      </rect>
+    </clipPath>
+    <clipPath id="barClip">
+      <rect x="24" y="166" height="12" width="0">
+        <animate attributeName="width" values="0;752" begin="1.6s" dur="1.6s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.4 0 0.6 1"/>
+      </rect>
+    </clipPath>
+    <clipPath id="tagClip">
+      <rect x="180" y="136" height="24" width="0">
+        <animate attributeName="width" values="0;440" begin="4.6s" dur="1.2s" fill="freeze"/>
+      </rect>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <!-- ===== Background ===== -->
+    <rect width="800" height="220" fill="url(#bg)"/>
+    <rect width="800" height="220" fill="url(#dots)"/>
+    <circle cx="120" cy="40" r="230" fill="url(#orbA)">
+      <animate attributeName="cx" values="120;620;400;120" dur="22s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="40;180;60;40" dur="22s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="700" cy="200" r="210" fill="url(#orbB)">
+      <animate attributeName="cx" values="700;180;520;700" dur="28s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="200;30;160;200" dur="28s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- ===== Title bar ===== -->
+    <rect width="800" height="30" fill="#141517" fill-opacity="0.85"/>
+    <line x1="0" y1="30.5" x2="800" y2="30.5" stroke="#2c2d31"/>
+    <circle cx="20" cy="15" r="5.5" fill="#E95420"/>
+    <circle cx="38" cy="15" r="5.5" fill="#3a3b40"/>
+    <circle cx="56" cy="15" r="5.5" fill="#3a3b40"/>
+    <text x="400" y="19.5" text-anchor="middle" font-size="12" fill="#8a8d93">diischm@github: ~/profile</text>
+    <text x="780" y="19.5" text-anchor="end" font-size="11" fill="#55585e">bash — 80×24</text>
+
+    <!-- ===== PHASE 1: boot terminal ===== -->
+    <g>
+      <!-- typed command (textLength locks width so cursor stays aligned on any font) -->
+      <text x="24" y="62" font-size="14" textLength="336" lengthAdjust="spacingAndGlyphs" clip-path="url(#cmdClip)" xml:space="preserve"><tspan fill="#E95420" font-weight="bold">diischm@github</tspan><tspan fill="#8a8d93">:</tspan><tspan fill="#F29111">~</tspan><tspan fill="#8a8d93">$ </tspan><tspan fill="#e6e6e6">./boot --profile diischm</tspan></text>
+      <rect x="24" y="50" width="8" height="16" fill="#E95420">
+        <animate attributeName="x" values="24;362" begin="0.4s" dur="1.1s" fill="freeze"/>
+        <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="0.8s" begin="1.5s" repeatCount="indefinite"/>
+      </rect>
+
+      <!-- systemd-style boot log -->
+      <text x="24" y="88" font-size="12.5" opacity="0" xml:space="preserve"><tspan fill="#5c5f66">[</tspan><tspan fill="#E95420" font-weight="bold">  OK  </tspan><tspan fill="#5c5f66">] </tspan><tspan fill="#c9cbd0">Mounted </tspan><tspan fill="#F29111">/home/diischm</tspan><tspan fill="#c9cbd0">.</tspan><set attributeName="opacity" to="1" begin="1.7s" fill="freeze"/><animate attributeName="x" values="14;24" begin="1.7s" dur="0.25s" fill="freeze"/></text>
+      <text x="24" y="108" font-size="12.5" opacity="0" xml:space="preserve"><tspan fill="#5c5f66">[</tspan><tspan fill="#E95420" font-weight="bold">  OK  </tspan><tspan fill="#5c5f66">] </tspan><tspan fill="#c9cbd0">Started </tspan><tspan fill="#F29111">security-hardening.service</tspan><tspan fill="#c9cbd0">.</tspan><set attributeName="opacity" to="1" begin="2.2s" fill="freeze"/><animate attributeName="x" values="14;24" begin="2.2s" dur="0.25s" fill="freeze"/></text>
+      <text x="24" y="128" font-size="12.5" opacity="0" xml:space="preserve"><tspan fill="#5c5f66">[</tspan><tspan fill="#E95420" font-weight="bold">  OK  </tspan><tspan fill="#5c5f66">] </tspan><tspan fill="#c9cbd0">Reached target </tspan><tspan fill="#F29111">automation.target</tspan><tspan fill="#c9cbd0">.</tspan><set attributeName="opacity" to="1" begin="2.7s" fill="freeze"/><animate attributeName="x" values="14;24" begin="2.7s" dur="0.25s" fill="freeze"/></text>
+
+      <!-- progress -->
+      <text x="24" y="158" font-size="11" fill="#8a8d93">loading profile</text>
+      <g font-size="11" fill="#e6e6e6" text-anchor="end">
+        <text x="776" y="158" visibility="hidden">0%<set attributeName="visibility" to="visible" begin="0s" end="1.76s"/></text>
+        <text x="776" y="158" visibility="hidden">10%<set attributeName="visibility" to="visible" begin="1.76s" end="1.92s"/></text>
+        <text x="776" y="158" visibility="hidden">20%<set attributeName="visibility" to="visible" begin="1.92s" end="2.08s"/></text>
+        <text x="776" y="158" visibility="hidden">30%<set attributeName="visibility" to="visible" begin="2.08s" end="2.24s"/></text>
+        <text x="776" y="158" visibility="hidden">40%<set attributeName="visibility" to="visible" begin="2.24s" end="2.4s"/></text>
+        <text x="776" y="158" visibility="hidden">50%<set attributeName="visibility" to="visible" begin="2.4s" end="2.56s"/></text>
+        <text x="776" y="158" visibility="hidden">60%<set attributeName="visibility" to="visible" begin="2.56s" end="2.72s"/></text>
+        <text x="776" y="158" visibility="hidden">70%<set attributeName="visibility" to="visible" begin="2.72s" end="2.88s"/></text>
+        <text x="776" y="158" visibility="hidden">80%<set attributeName="visibility" to="visible" begin="2.88s" end="3.04s"/></text>
+        <text x="776" y="158" visibility="hidden">90%<set attributeName="visibility" to="visible" begin="3.04s" end="3.2s"/></text>
+        <text x="776" y="158" visibility="hidden" fill="#E95420">100%<set attributeName="visibility" to="visible" begin="3.2s" fill="freeze"/></text>
+      </g>
+      <rect x="24" y="166" width="752" height="12" fill="url(#blocksBg)"/>
+      <rect x="24" y="166" width="752" height="12" fill="url(#blocks)" clip-path="url(#barClip)" filter="url(#glow)" opacity="0.6"/>
+      <rect x="24" y="166" width="752" height="12" fill="url(#blocks)" clip-path="url(#barClip)"/>
+
+      <animate attributeName="opacity" values="1;0" begin="3.5s" dur="0.4s" fill="freeze"/>
+    </g>
+
+    <!-- ===== PHASE 2: identity ===== -->
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;1" begin="3.9s" dur="0.5s" fill="freeze"/>
+
+      <!-- soft orange glow behind name -->
+      <text x="400" y="106" text-anchor="middle" font-size="40" font-weight="bold" textLength="470" lengthAdjust="spacing" fill="#E95420" opacity="0.5" filter="url(#glow)">Dimitar Karadjovski</text>
+
+      <g filter="url(#reveal)">
+        <!-- glitch layer: orange -->
+        <g opacity="0">
+          <animate attributeName="opacity" values="0;0.85;0.85;0.85;0;0" keyTimes="0;0.02;0.05;0.08;0.1;1" dur="6s" begin="4.1s" repeatCount="indefinite"/>
+          <animateTransform attributeName="transform" type="translate" values="0 0;-5 1;4 -1;-3 0;0 0;0 0" keyTimes="0;0.02;0.05;0.08;0.1;1" dur="6s" begin="4.1s" repeatCount="indefinite"/>
+          <text x="400" y="106" text-anchor="middle" font-size="40" font-weight="bold" textLength="470" lengthAdjust="spacing" fill="#E95420">Dimitar Karadjovski</text>
+        </g>
+        <!-- glitch layer: graphite-silver -->
+        <g opacity="0">
+          <animate attributeName="opacity" values="0;0.7;0.7;0.7;0;0" keyTimes="0;0.02;0.05;0.08;0.1;1" dur="6s" begin="4.1s" repeatCount="indefinite"/>
+          <animateTransform attributeName="transform" type="translate" values="0 0;5 -1;-4 1;3 0;0 0;0 0" keyTimes="0;0.02;0.05;0.08;0.1;1" dur="6s" begin="4.1s" repeatCount="indefinite"/>
+          <text x="400" y="106" text-anchor="middle" font-size="40" font-weight="bold" textLength="470" lengthAdjust="spacing" fill="#9aa0a6">Dimitar Karadjovski</text>
+        </g>
+
+        <!-- main name -->
+        <text x="400" y="106" text-anchor="middle" font-size="40" font-weight="bold" textLength="470" lengthAdjust="spacing" fill="url(#nameFill)">Dimitar Karadjovski</text>
+        <text x="400" y="106" text-anchor="middle" font-size="40" font-weight="bold" textLength="470" lengthAdjust="spacing" fill="url(#shine)">Dimitar Karadjovski</text>
+
+        <!-- glitch slices -->
+        <rect x="150" y="84" width="500" height="3" fill="#E95420" opacity="0">
+          <animate attributeName="opacity" values="0;0.9;0;0.7;0;0" keyTimes="0;0.02;0.04;0.06;0.08;1" dur="6s" begin="4.1s" repeatCount="indefinite"/>
+          <animate attributeName="x" values="150;170;140;160;150;150" keyTimes="0;0.02;0.04;0.06;0.08;1" dur="6s" begin="4.1s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="200" y="97" width="400" height="2" fill="#d4d7dc" opacity="0">
+          <animate attributeName="opacity" values="0;0;0.8;0;0" keyTimes="0;0.03;0.05;0.07;1" dur="6s" begin="4.1s" repeatCount="indefinite"/>
+        </rect>
+      </g>
+
+      <!-- underline grows from center -->
+      <rect x="400" y="121" width="0" height="2" rx="1" fill="url(#lineGrad)">
+        <animate attributeName="x" values="400;220" begin="4.3s" dur="0.8s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.2 0.8 0.2 1"/>
+        <animate attributeName="width" values="0;360" begin="4.3s" dur="0.8s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.2 0.8 0.2 1"/>
+      </rect>
+
+      <!-- typed tagline -->
+      <text x="185" y="152" font-size="15" textLength="430" lengthAdjust="spacing" fill="#c9cbd0" clip-path="url(#tagClip)">DevOps<tspan fill="#E95420"> · </tspan>Security<tspan fill="#E95420"> · </tspan>Automation<tspan fill="#E95420"> · </tspan>Linux Systems</text>
+      <rect x="185" y="140" width="8" height="15" fill="#E95420" visibility="hidden">
+        <set attributeName="visibility" to="visible" begin="4.6s" fill="freeze"/>
+        <animate attributeName="x" values="185;622" begin="4.6s" dur="1.2s" fill="freeze"/>
+        <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1s" begin="5.8s" repeatCount="indefinite"/>
+      </rect>
+
+      <!-- footer -->
+      <g opacity="0">
+        <animate attributeName="opacity" values="0;1" begin="5.8s" dur="0.6s" fill="freeze"/>
+        <text x="776" y="200" text-anchor="end" font-size="11" fill="#5c5f66">github.com/<tspan fill="#E95420">diischm</tspan></text>
+      </g>
+    </g>
+
+    <!-- ===== Overlays ===== -->
+    <rect x="0" y="-60" width="800" height="60" fill="url(#beam)">
+      <animate attributeName="y" values="-60;220" dur="6s" repeatCount="indefinite"/>
+    </rect>
+    <rect width="800" height="220" fill="url(#scan)" opacity="0.5"/>
+    <rect width="800" height="220" fill="url(#vignette)"/>
+  </g>
+
+  <!-- ===== Border + travelling light ===== -->
+  <rect x="0.5" y="0.5" width="799" height="219" rx="12" fill="none" stroke="#33353a"/>
+  <rect x="0.5" y="0.5" width="799" height="219" rx="12" fill="none" stroke="#E95420" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="140 1875" opacity="0.9">
+    <animate attributeName="stroke-dashoffset" values="0;-2015" dur="8s" repeatCount="indefinite"/>
+  </rect>
+</svg>
