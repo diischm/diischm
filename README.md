@@ -1,5 +1,9 @@
 <p align="center">
-  <img src="./assets/banner.svg" alt="Dimitar Karadjovski — DevOps · Security · Automation · Linux Systems" width="100%">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg">
+    <img alt="Dimitar Karadjovski — DevOps · Security · Infrastructure" src="assets/banner-dark.svg" width="800">
+  </picture>
 </p>
 <p align="center">
   <img src="https://skillicons.dev/icons?i=linux,bash,py,docker,kubernetes,terraform,aws,ansible,githubactions&theme=dark" alt="Stack">
