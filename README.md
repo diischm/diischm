@@ -14,6 +14,6 @@
   </a>
 </p>
 <p align="center">
-  <a href="https://cronrack.xyz"><img src="https://img.shields.io/badge/CronRack-cronrack.xyz-f26b2e?style=flat-square&labelColor=0b0c0f" alt="CronRack"></a>
-  <a href="https://www.linkedin.com/in/YOUR-LINKEDIN/"><img src="https://img.shields.io/badge/LinkedIn-Dimitar_Karadjovski-0A66C2?style=flat-square&logo=linkedin&labelColor=0b0c0f" alt="LinkedIn"></a>
+  <a href="https://cronrack.xyz"><img src="https://img.shields.io/badge/CronRack-cronrack.xyz-d24e01?style=flat-square&labelColor=0b0c0f" alt="CronRack"></a>
+  <a href="https://www.linkedin.com/in/YOUR-LINKEDIN/"><img src="https://img.shields.io/badge/LinkedIn-Dimitar_Karadjovski-D24E01?style=flat-square&logo=linkedin&labelColor=0b0c0f" alt="LinkedIn"></a>
 </p>
